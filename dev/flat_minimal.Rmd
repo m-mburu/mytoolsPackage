@@ -10,7 +10,7 @@ library(testthat)
 ```
 
 <!--
- You need to run the 'description' chunk in the '0-dev_history.Rmd' file before continuing your code there.
+You need to run the 'description' chunk in the '0-dev_history.Rmd' file before continuing your code there.
 -->
 
 ```{r development-load}
@@ -19,7 +19,7 @@ pkgload::load_all(export_all = FALSE)
 ```
 
 # my_summary
-    
+
 ```{r function-my_summary}
 #' Title
 #' 
@@ -31,7 +31,7 @@ pkgload::load_all(export_all = FALSE)
 #' 
 #' @export
 my_summary <- function(df, by_col){
-    
+  
   if(isFALSE(inherits(df, "data.table"))){
     
     setDT(df)
@@ -41,19 +41,63 @@ my_summary <- function(df, by_col){
   df2
 }
 ```
-  
+
+
 ```{r example-my_summary}
-data("iris")
+data("iris_data")
 my_summary(df = iris,
            by = "Species")
 ```
-  
+
 ```{r tests-my_summary}
 test_that("my_summary works", {
   expect_true(inherits(my_summary, "function")) 
 })
 ```
+
+
+# myScatter
+
+```{r function-myScatter}
+#' Title
+#' 
+#' Description
+#' @param df A data frame 
+#' @param x, x axis value
+#' @param y y axis value
+#' @param col_var color variable value
+#' @return a list of class ggplot
+#' @importFrom ggplot2 ggplot 
+#' @importFrom ggplot2 aes
+#' @importFrom ggplot2 geom_point
+#' @importFrom ggplot2 theme_minimal
+#' @export
+myScatter <- function(df, x, y, col_var = NULL){
   
+  ggplot(df, aes(x = {{x}},  y = {{y}}, color = {{col_var}}))+
+    geom_point()+
+    theme_minimal()
+}
+
+```
+
+
+
+```{r example-myScatter}
+myScatter(df = iris_data,
+          x = Petal.Width , 
+          y = Petal.Length , 
+          col_var = Species)
+```
+
+
+
+```{r tests-myScatter}
+test_that("myScatter works", {
+  expect_true(inherits(myScatter, "function")) 
+})
+```
+
 
 ```{r development-inflate, eval=FALSE}
 # Run but keep eval=FALSE to avoid infinite loop

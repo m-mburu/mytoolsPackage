@@ -38,3 +38,12 @@ my_summary(df = iris_data,
 #> 2: versicolor  75.5        5.936       2.770        4.260       1.326
 #> 3:  virginica 125.5        6.588       2.974        5.552       2.026
 ```
+
+``` r
+myScatter(df = iris_data,
+          x = Petal.Width , 
+          y = Petal.Length , 
+          col_var = Species)
+```
+
+<img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />

@@ -18,7 +18,7 @@ a Data Frame
 Description
 }
 \examples{
-data("iris")
+data("iris_data")
 my_summary(df = iris,
            by = "Species")
 }

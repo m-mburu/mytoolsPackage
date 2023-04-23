@@ -14,12 +14,13 @@ All commands that you use to use when developing packages...
 ```{r description, eval=FALSE}
 # Describe your package
 fusen::fill_description(
+  overwrite = T,
   pkg = here::here(),
   fields = list(
     Title = "A package with a few functions",
     Description = "A package with some things",
     `Authors@R` = c(
-      person("Moses", "buru", email = "mmburu20@gmail.com", role = c("aut", "cre"))
+      person("Moses", "Mburu", email = "mmburu20@gmail.com", role = c("aut", "cre"))
     )
   )
 )

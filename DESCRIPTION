@@ -2,13 +2,15 @@ Package: mytoolsPackage
 Title: A Package With A Few Functions
 Version: 0.0.0.9000
 Authors@R: 
-    person("Moses", "buru", , "mmburu20@gmail.com", role = c("aut", "cre"))
+    person("Moses", "Mburu", , "mmburu20@gmail.com", role = c("aut", "cre"))
 Description: A package with some things.
 License: MIT + file LICENSE
 Depends: 
-    R (>= 2.10)
+    R (>= 3.10)
 Imports: 
-    data.table
+    data.table,
+    ggplot2,
+    rlang
 Suggests: 
     knitr,
     rmarkdown,

@@ -9,7 +9,7 @@
 A package with some things.
 }
 \author{
-\strong{Maintainer}: Moses buru \email{mmburu20@gmail.com}
+\strong{Maintainer}: Moses Mburu \email{mmburu20@gmail.com}
 
 }
 \keyword{internal}

@@ -10,11 +10,11 @@
 #' 
 #' @export
 #' @examples
-#' data("iris")
+#' data("iris_data")
 #' my_summary(df = iris,
 #'            by = "Species")
 my_summary <- function(df, by_col){
-    
+  
   if(isFALSE(inherits(df, "data.table"))){
     
     setDT(df)
