@@ -42,7 +42,7 @@ What is special about using `README.Rmd` instead of just `README.md`? You can in
 
 ```{r}
 data("iris_data")
-my_summary(df = iris,
+my_summary(df = iris_data,
            by = "Species")
 ```
 
