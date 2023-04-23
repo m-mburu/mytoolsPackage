@@ -9,8 +9,7 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
   fig.path = "man/figures/README-",
-  out.width = "100%",
-  warning = FALSE
+  out.width = "100%"
 )
 ```
 
@@ -23,13 +22,13 @@ The goal of mytoolsPackage is to ...
 
 ## Installation
 
-You can install the development version of mytoolsPackage like so:
-
+You can install the development version of mytoolsPackage from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
 devtools::install_github("m-mburu/mytoolsPackage")
 ```
+
 ## Example
 
 This is a basic example which shows you how to solve a common problem:
@@ -39,11 +38,10 @@ library(mytoolsPackage)
 ## basic example code
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
 
 ```{r}
 data("iris_data")
-my_summary(df = iris_data,
+my_summary(df = iris,
            by = "Species")
 ```
 
