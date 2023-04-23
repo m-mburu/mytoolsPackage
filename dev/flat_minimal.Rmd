@@ -1,0 +1,63 @@
+---
+title: "flat_minimal.Rmd empty"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r development, include=FALSE}
+library(testthat)
+```
+
+<!--
+ You need to run the 'description' chunk in the '0-dev_history.Rmd' file before continuing your code there.
+-->
+
+```{r development-load}
+# Load already included functions if relevant
+pkgload::load_all(export_all = FALSE)
+```
+
+# my_summary
+    
+```{r function-my_summary}
+#' Title
+#' 
+#' Description
+#' @param df A data frame or data table
+#' @param by_col group by column
+#' @importFrom data.table setDT
+#' @return a Data Frame
+#' 
+#' @export
+my_summary <- function(df, by_col){
+    
+  if(isFALSE(inherits(df, "data.table"))){
+    
+    setDT(df)
+  }
+  
+  df2 = df[, lapply(.SD, mean), by = by_col]
+  df2
+}
+```
+  
+```{r example-my_summary}
+data("iris")
+my_summary(df = iris,
+           by = "Species")
+```
+  
+```{r tests-my_summary}
+test_that("my_summary works", {
+  expect_true(inherits(my_summary, "function")) 
+})
+```
+  
+
+```{r development-inflate, eval=FALSE}
+# Run but keep eval=FALSE to avoid infinite loop
+# Execute in the console directly
+fusen::inflate(flat_file = "dev/flat_minimal.Rmd", 
+               vignette_name = "Minimal")
+```

@@ -1,0 +1,7 @@
+
+^dev$
+^LICENSE\.md$
+^mytoolsPackage\.Rproj$
+^\.Rproj\.user$
+^data-raw$
+^README\.Rmd$
